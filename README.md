@@ -156,4 +156,6 @@ We would like to thank Yufei Wang and Mochu Xiang for the effective discussion.
 Some of the code in this repo is borrowed from [LMNet](https://github.com/PRBonn/LiDAR-MOS) and [spvnas](https://github.com/mit-han-lab/spvnas).
 
 ## Copyright
-[TODO: need to update.]
+Copyright 2022, Jiadai Sun, Xieyuanli Chen, Xianjing Zhang, HAOMO.AI Technology Co., Ltd., China.
+
+This project is free software made available under the GPL v3.0 License. For details see the LICENSE file.
