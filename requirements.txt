@@ -1,0 +1,19 @@
+icecream
+tqdm
+matplotlib
+open3d
+pyyaml
+tensorboard==2.4.0
+tensorboardX==2.1
+vispy==0.7.0
+cython==0.29.26
+easydict==1.9
+nose==1.3.7
+numpy==1.19.4
+opencv-contrib-python==4.5.1.48
+opencv-python==4.5.1.48
+scikit-learn==0.24.2
+sklearn
+strictyaml==1.4.4
+# transforms3d
+# numba

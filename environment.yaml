@@ -1,0 +1,24 @@
+name: mos3d
+channels:
+  # - pytorch
+  - defaults
+  - anaconda
+  # You can use the TUNA mirror to speed up the installation if you are in mainland China.
+  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+dependencies:
+  - python=3.7.7
+  - pytorch=1.7.0
+  - torchvision=0.8.0
+  - cudatoolkit=11.0
+  - ipython
+  - tqdm
+  - numba
+  - sparsehash  # dependency for torchsparse
+  - pyqt=5.9.2
+  - pip
+  - pip:
+    - -r requirements.txt
+    # - git+http://github.com/mit-han-lab/torchsparse.git@v1.4.0
