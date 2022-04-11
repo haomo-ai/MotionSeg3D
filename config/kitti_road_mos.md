@@ -2,7 +2,7 @@
 
 To enrich the dataset in the moving object segmentation (MOS) task and to reduce the gap of different data distributions between the validation and test sets in the existing SemanticKITTI-MOS dataset, we automatically annotated and manually corrected the [KITTI-Road](http://www.cvlibs.net/datasets/kitti/raw_data.php?type=road) dataset.
 
-More specifically, we first use our auto-mos labeling method ([link](https://arxiv.org/pdf/2201.04501.pdf)) to automatically generate the MOS labels for KITTI-Road data. We then use a point labeller([link](https://github.com/jbehley/point_labeler)) to manually refined the labels.
+More specifically, we first use our auto-mos labeling method ([link](https://arxiv.org/pdf/2201.04501.pdf)) to automatically generate the MOS labels for KITTI-Road data. We then use a point labeller ([link](https://github.com/jbehley/point_labeler)) to manually refined the labels.
 
 We follow our semantic SLAM [SuMa++](https://github.com/PRBonn/semantic_suma) to rename the sequences of KITTI-Road data as follows:
 
