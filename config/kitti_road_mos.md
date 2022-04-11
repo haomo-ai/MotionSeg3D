@@ -21,3 +21,24 @@ raw_id -> seq_id
 2011_10_03_drive_0042 -> 40
 2011_10_03_drive_0047 -> 41
 ```
+We organize our proposed KITTI-Road-MOS using the same setup and data structure used in SemanticKITTI-MOS:
+
+```
+DATAROOT
+├── sequences
+│   └── 30
+│       ├── calib.txt                       # calibration file provided by KITTI
+│       ├── poses.txt                       # ground truth poses file provided by KITTI
+│       ├── velodyne                        # velodyne 64 LiDAR scans provided by KITTI
+│       │   ├── 000000.bin
+│       │   ├── 000001.bin
+│       │   └── ...
+│       ├── labels                          # ground truth labels from us
+│       │   ├── 000000.label
+│       │   ├── 000001.label
+│       │   └── ...
+│       └── residual_images_1               # the proposed residual images
+│           ├── 000000.npy
+│           ├── 000001.npy
+│           └── ...
+```
