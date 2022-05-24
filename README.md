@@ -2,7 +2,7 @@
 This repo contains the code for our paper: 
 
 > Efficient Spatial-Temporal Information Fusion for LiDAR-Based 3D Moving Object Segmentation.  
-> [Jiadai Sun](https://github.com/MaxChanger), [Yuchao Dai](https://scholar.google.com/citations?user=fddAbqsAAAAJ&hl=en&oi=ao), [Xianjing Zhang](https://github.com/zoojing), Jintao Xu, Rui Ai, Weihao Gu, [Cyrill Stachniss](https://scholar.google.com/citations?user=8vib2lAAAAAJ&hl=en&oi=ao) and [Xieyuanli Chen](https://github.com/Chen-Xieyuanli)  
+> [Jiadai Sun](https://github.com/MaxChanger), [Yuchao Dai](https://scholar.google.com/citations?user=fddAbqsAAAAJ&hl=en&oi=ao), [Xianjing Zhang](https://github.com/zoojing), Jintao Xu, Rui Ai, Weihao Gu, and [Xieyuanli Chen](https://github.com/Chen-Xieyuanli)  
 > *submitted to RAL/IROS 2022*
 
 ![method-framework](assets/framework.png)
@@ -146,7 +146,7 @@ If you find this code useful for your research, please use the following BibTeX 
 ```bibtex
 @article{sun2022mos3d,
   title={Efficient Spatial-Temporal Information Fusion for LiDAR-Based 3D Moving Object Segmentation},
-  author={Sun, Jiadai and Dai, Yuchao and Zhang, Xianjing and Xu, Jintao and Ai, Rui and Gu, Weihao and Stachniss, Cyrill and Chen, Xieyuanli},
+  author={Sun, Jiadai and Dai, Yuchao and Zhang, Xianjing and Xu, Jintao and Ai, Rui and Gu, Weihao and Chen, Xieyuanli},
   year={2022}
 }
 ```
