@@ -61,9 +61,9 @@ python utils/visualize_mos.py -d ./toydata -p ./pred/oursv2 --offset 0 -s 38
 ### Data Preperation for SemanticKITTI-MOS and KITTI-Road-MOS (newly annotated by us)
 1. Download KITTI Odometry Benchmark Velodyne point clouds (80 GB) from [here](http://www.cvlibs.net/download.php?file=data_odometry_velodyne.zip).
 2. Download KITTI Odometry Benchmark calibration data (1 MB) from [here](http://www.cvlibs.net/download.php?file=data_odometry_calib.zip).
-3. Download SemanticKITTI label data (179 MB) (alternatively the data in Files corresponds to the same data) from [here](http://www.semantic-kitti.org/assets/dataset_odometry_labels.zip).
+3. Download SemanticKITTI label data (179 MB) (alternatively the data in Files corresponds to the same data) from [here](http://www.semantic-kitti.org/assets/data_odometry_labels.zip).
 4. Download KITTI-Road Velodyne point clouds from [original website](http://www.cvlibs.net/datasets/kitti/raw_data.php?type=road), more details can be found in [config/kitti_road_mos.md](config/kitti_road_mos.md)
-5. Download the KITTI-Road label data annotated by us from [here]().
+5. Download the KITTI-Road label data (5.4 MB) annotated by us from [here](https://drive.google.com/file/d/1BP-i6CoDCzuPNlcA7TUwsT24bXXgVIIY/view?usp=sharing).
 6. Extract everything into the same folder, as follow:
 <details>
   <summary>[Expected directory structure of SemanticKITTI (click to expand)]</summary>
@@ -89,8 +89,9 @@ DATAROOT
 ```
 </details>
 
-<br/>
-Next run the data preparation script to generate the residual images. More parameters about the data preparation can be found in the yaml file [config/data_preparing.yaml](config/data_preparing.yaml).
+
+7. Next run the data preparation script to generate the residual images. More parameters about the data preparation can be found in the yaml file [config/data_preparing.yaml](./config/data_preparing.yaml).
+
 
 ```shell
 python utils/auto_gen_residual_images.py 
@@ -152,7 +153,7 @@ If you find this code useful for your research, please use the following BibTeX 
 ```
 
 ## Acknowledgment
-We would like to thank Yufei Wang and Mochu Xiang for the effective discussion.  
+We would like to thank Yufei Wang and Mochu Xiang for their insightful and effective discussions.  
 Some of the code in this repo is borrowed from [LMNet](https://github.com/PRBonn/LiDAR-MOS) and [spvnas](https://github.com/mit-han-lab/spvnas).
 
 ## Copyright
