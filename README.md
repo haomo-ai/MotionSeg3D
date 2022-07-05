@@ -1,11 +1,20 @@
 # Efficient Spatial-Temporal Information Fusion for LiDAR-Based 3D Moving Object Segmentation
+
+### [Project page](https://npucvr.github.io/MotionSeg3D) <br>
+
 This repo contains the code for our paper: 
 
 > Efficient Spatial-Temporal Information Fusion for LiDAR-Based 3D Moving Object Segmentation.  
 > [Jiadai Sun](https://github.com/MaxChanger), [Yuchao Dai](https://scholar.google.com/citations?user=fddAbqsAAAAJ&hl=en&oi=ao), [Xianjing Zhang](https://github.com/zoojing), Jintao Xu, Rui Ai, Weihao Gu, and [Xieyuanli Chen](https://github.com/Chen-Xieyuanli)  
-> *submitted to RAL/IROS 2022*
+> *Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2022*
 
-![method-framework](assets/framework.png)
+<!-- ![method-framework](assets/framework.png) -->
+<!-- ![method-framework](assets/visualization.jpg) -->
+<p align='center'>  
+<a href="https://youtu.be/carIdfwLX_s">
+  <img src='assets/visualization.jpg' width='500' alt='demo video'/>
+</a>
+</p>
 
 <br/>
 
@@ -47,7 +56,7 @@ unzip ckpt_motionseg3d_pointrefine.zip
 ```
 </details>
 
-Then you could use the follow command to inference and visualize the predictions. If you use toy dataset, please modify the `seq_id` corresponding to valid in `data_cfg.yaml`.
+Then you could use the follow command to inference and visualize the predictions. If you use toy dataset, please modify the `seq_id` corresponding to `valid` in `model_path/data_cfg.yaml`.
 ```bash
 # To inference the predictions.
 python infer.py -d ./toydata -m ./log/motionseg3d_pointrefine -l ./pred/oursv1 -s valid
@@ -63,7 +72,7 @@ python utils/visualize_mos.py -d ./toydata -p ./pred/oursv2 --offset 0 -s 38
 2. Download KITTI Odometry Benchmark calibration data (1 MB) from [here](http://www.cvlibs.net/download.php?file=data_odometry_calib.zip).
 3. Download SemanticKITTI label data (179 MB) (alternatively the data in Files corresponds to the same data) from [here](http://www.semantic-kitti.org/assets/data_odometry_labels.zip).
 4. Download KITTI-Road Velodyne point clouds from [original website](http://www.cvlibs.net/datasets/kitti/raw_data.php?type=road), more details can be found in [config/kitti_road_mos.md](config/kitti_road_mos.md)
-5. Download the KITTI-Road label data (5.4 MB) annotated by us from [here](https://drive.google.com/file/d/1BP-i6CoDCzuPNlcA7TUwsT24bXXgVIIY/view?usp=sharing).
+5. Download the KITTI-Road-MOS label data annotated by us, the pose and calib files from [here](https://drive.google.com/file/d/1pdpcGReJHOJp01pbgXUbcGROWOBd_2kj/view?usp=sharing) (6.1 MB) .
 6. Extract everything into the same folder, as follow:
 <details>
   <summary>[Expected directory structure of SemanticKITTI (click to expand)]</summary>
@@ -90,7 +99,7 @@ DATAROOT
 </details>
 
 
-7. Next run the data preparation script to generate the residual images. More parameters about the data preparation can be found in the yaml file [config/data_preparing.yaml](./config/data_preparing.yaml).
+7. Next run the data preparation script (based on [LMNet](https://github.com/PRBonn/LiDAR-MOS)) to generate the residual images. More parameters about the data preparation can be found in the yaml file [config/data_preparing.yaml](./config/data_preparing.yaml).
 
 
 ```shell
@@ -99,16 +108,17 @@ python utils/auto_gen_residual_images.py
 
 ### Inference on SemanticKITTI-MOS
 > The newly labeled KITTI-Road-MOS data is divided into train/valid set.  
-> The useage of data can be controlled by specifying data_config.
+> The useage of data can be controlled by specifying `--data_config` in training.
+> During inference, if you use toy dataset or do not download the KITTI-Road-MOS, please modify the `seq_id` corresponding to `valid` in `model_path/data_cfg.yaml`.
 
 ```bash
 # validation split
-python infer.py -d DATAROOT -m ./log/model_path/logs/TIMESTAMP/ -l ./predictions/ -s valid # -dc config/labels/semantic-kitti-mos.yaml
+python infer.py -d DATAROOT -m ./log/model_path/logs/TIMESTAMP/ -l ./predictions/ -s valid 
 
 # test split
-python infer.py -d DATAROOT -m ./log/model_path/logs/TIMESTAMP/ -l ./predictions/ -s test # -dc config/labels/semantic-kitti-mos.raw.yaml
+python infer.py -d DATAROOT -m ./log/model_path/logs/TIMESTAMP/ -l ./predictions/ -s test
 ```
-The predictions/labels will be saved to `./predictions/`. `--data_config` determines whether to use new label data KITTI-Road.
+The predictions/labels will be saved to `./predictions/`.
 
 
 ### Evaluation on SemanticKITTI-MOS validation split
@@ -124,6 +134,7 @@ python utils/evaluate_mos.py -d DATAROOT -p ./predictions/ --datacfg config/labe
 ### Training on SemanticKITTI-MOS
 <!-- Our program is a two-stage training process,  -->
 The training is seperated into two phases, and switching between phases is currently manually controlled.
+`--data_config` determines whether to use new label data KITTI-Road-MOS, such as `-dc config/labels/semantic-kitti-mos.yaml` or `-dc config/labels/semantic-kitti-mos.raw.yaml`
 
 - Phase 1 (multi-gpu): Only the range image is used for input and supervision. The training log and checkpoint will be stored in `./log/ours_motionseg3d/logs/TIMESTAMP/`. 
 
@@ -145,10 +156,12 @@ python train_2stage.py -d DATAROOT -ac ./train_yaml/mos_pointrefine_stage.yml -l
 If you find this code useful for your research, please use the following BibTeX entry.
 
 ```bibtex
-@article{sun2022mos3d,
+@inproceedings{sun2022mos3d,
   title={Efficient Spatial-Temporal Information Fusion for LiDAR-Based 3D Moving Object Segmentation},
   author={Sun, Jiadai and Dai, Yuchao and Zhang, Xianjing and Xu, Jintao and Ai, Rui and Gu, Weihao and Chen, Xieyuanli},
-  year={2022}
+  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2022},
+  organization={IEEE}
 }
 ```
 
