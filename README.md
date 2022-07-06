@@ -1,6 +1,6 @@
 # Efficient Spatial-Temporal Information Fusion for LiDAR-Based 3D Moving Object Segmentation
 
-### [Project page](https://npucvr.github.io/MotionSeg3D) <br>
+### [Paper](https://arxiv.org/abs/2207.02201) | [Project page](https://npucvr.github.io/MotionSeg3D) | [Supp. Video](https://youtu.be/carIdfwLX_s) <br>
 
 This repo contains the code for our paper: 
 
