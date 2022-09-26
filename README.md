@@ -1,6 +1,6 @@
 # Efficient Spatial-Temporal Information Fusion for LiDAR-Based 3D Moving Object Segmentation
 
-### [Paper](https://arxiv.org/abs/2207.02201) | [Project page](https://npucvr.github.io/MotionSeg3D) | [Supp. Video](https://youtu.be/carIdfwLX_s) <br>
+### [Paper](https://arxiv.org/abs/2207.02201) | [Project page](https://npucvr.github.io/MotionSeg3D) | [Overview Video](https://youtu.be/kao26zX1Hdo) | [Supp. Video](https://youtu.be/carIdfwLX_s) <br>
 
 This repo contains the code for our paper: 
 
@@ -11,7 +11,7 @@ This repo contains the code for our paper:
 <!-- ![method-framework](assets/framework.png) -->
 <!-- ![method-framework](assets/visualization.jpg) -->
 <p align='center'>  
-<a href="https://youtu.be/carIdfwLX_s">
+<a href="https://youtu.be/kao26zX1Hdo">
   <img src='assets/visualization.jpg' width='500' alt='demo video'/>
 </a>
 </p>
@@ -72,7 +72,7 @@ python utils/visualize_mos.py -d ./toydata -p ./pred/oursv2 --offset 0 -s 38
 2. Download KITTI Odometry Benchmark calibration data (1 MB) from [here](http://www.cvlibs.net/download.php?file=data_odometry_calib.zip).
 3. Download SemanticKITTI label data (179 MB) (alternatively the data in Files corresponds to the same data) from [here](http://www.semantic-kitti.org/assets/data_odometry_labels.zip).
 4. Download KITTI-Road Velodyne point clouds from [original website](http://www.cvlibs.net/datasets/kitti/raw_data.php?type=road), more details can be found in [config/kitti_road_mos.md](config/kitti_road_mos.md)
-5. Download the KITTI-Road-MOS label data annotated by us, the pose and calib files from [here](https://drive.google.com/file/d/1pdpcGReJHOJp01pbgXUbcGROWOBd_2kj/view?usp=sharing) (6.1 MB) .
+5. Download the KITTI-Road-MOS label data annotated by us, the pose and calib files from [here](https://drive.google.com/file/d/131tKKhJiNeSiJpnlrXS43bHgZJHh9tug/view?usp=sharing) (6.4 MB) [Remap the label to 9 and 251, consistent with the SemanticKITTI-MOS benchmark]. ~~[old version here](https://drive.google.com/file/d/1pdpcGReJHOJp01pbgXUbcGROWOBd_2kj/view?usp=sharing) (6.1 MB)~~.
 6. Extract everything into the same folder, as follow:
 <details>
   <summary>[Expected directory structure of SemanticKITTI (click to expand)]</summary>
@@ -167,7 +167,7 @@ If you find this code useful for your research, please use the following BibTeX 
 
 ## Acknowledgment
 We would like to thank Yufei Wang and Mochu Xiang for their insightful and effective discussions.  
-Some of the code in this repo is borrowed from [LMNet](https://github.com/PRBonn/LiDAR-MOS) and [spvnas](https://github.com/mit-han-lab/spvnas).
+Some of the code in this repo is borrowed from [SoftPool](https://github.com/alexandrosstergiou/SoftPool), [RangeDet](https://github.com/tusen-ai/RangeDet), [LMNet](https://github.com/PRBonn/LiDAR-MOS) and [spvnas](https://github.com/mit-han-lab/spvnas), thanks all authors for their awesome projects.
 
 ## Copyright
 Copyright 2022, Jiadai Sun, Xieyuanli Chen, Xianjing Zhang, HAOMO.AI Technology Co., Ltd., China.

@@ -22,7 +22,7 @@ raw_id -> seq_id
 2011_10_03_drive_0047 -> 41
 ```
 We provide a simple download and conversion script [utils/download_kitti_road.sh](../utils/download_kitti_road.sh), please modify the `DATA_ROOT` path and manually move the result folder `sequences` to the target folder.
-And you need to download the KITTI-Road-MOS label data annotated by us, the pose and calib files from [here](https://drive.google.com/file/d/1pdpcGReJHOJp01pbgXUbcGROWOBd_2kj/view?usp=sharing) (6.1 MB) .
+And you need to download the KITTI-Road-MOS label data annotated by us, the pose and calib files from [here](https://drive.google.com/file/d/131tKKhJiNeSiJpnlrXS43bHgZJHh9tug/view?usp=sharing) (6.4 MB) [Remap the label to 9 and 251, consistent with the SemanticKITTI-MOS benchmark]. ~~[old version here](https://drive.google.com/file/d/1pdpcGReJHOJp01pbgXUbcGROWOBd_2kj/view?usp=sharing) (6.1 MB)~~.
 
 We organize our proposed KITTI-Road-MOS using the same setup and data structure used in SemanticKITTI-MOS:
 
