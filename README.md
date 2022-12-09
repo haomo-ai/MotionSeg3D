@@ -18,6 +18,9 @@ This repo contains the code for our paper:
 
 <br/>
 
+## News
+- [2022/12/09] Fix the 'nan' bug caused by softpool, [#11](https://github.com/haomo-ai/MotionSeg3D/issues/11),[#9](https://github.com/haomo-ai/MotionSeg3D/issues/9),[#6](https://github.com/haomo-ai/MotionSeg3D/issues/6)
+- [2022/09/26] Update the KITTI-Road labels [here](https://drive.google.com/file/d/131tKKhJiNeSiJpnlrXS43bHgZJHh9tug/view?usp=sharing), remap the label to 9 and 251
 ## How to Use
 
 
@@ -29,7 +32,10 @@ conda activate mos3d
 
 # Install SoftPool follow https://github.com/alexandrosstergiou/SoftPool
 git clone https://github.com/alexandrosstergiou/SoftPool.git
-cd SoftPool-master/pytorch
+cd SoftPool
+git checkout 2d2ec6d # rollback to 2d2ec6dca10b7683ffd41061a27910d67816bfa5
+cd pytorch
+
 make install
 --- (optional) ---
 make test
